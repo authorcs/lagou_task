@@ -15,3 +15,8 @@ promise.then(function(value) {
 }, function(error) {
   console.log('rejected', error)
 })
+
+
+const promise = new Promise(function(resolve, reject) {
+  
+})

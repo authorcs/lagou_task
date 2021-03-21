@@ -10,6 +10,11 @@ ajax('/api/user.json').then(function(value) {
 
 
 // 用catch方法，可以捕捉到任何一次，链式调用的时候用这种
+
+// then 和 catch 方法捕获异常的不同
+  // 链式调用的catch是给前面then方法返回的promise对象指定失败回调，并不是给第一个指定的，只是因为这是promise链条
+        // 前面的promise异常会被一直往后传递，所有可以在catch中可以捕获前面的异常
+  // then中的第二个参数捕获异常，只能捕获当前的then方法失败回调
 ajax('/api/user.json').then(function(value) {
   console.log('resolve', value)
   return ajax('/api/stu.json')
